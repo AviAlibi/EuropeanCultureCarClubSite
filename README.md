@@ -23,7 +23,7 @@ docker compose up --build
 ```
 
 App URL: http://localhost:3000
-Postgres URL: postgresql://postgres:postgres@localhost:5432/appdb
+Postgres URL: postgresql://postgres:postgres@localhost:5432/db
 
 ## Scripts
 
