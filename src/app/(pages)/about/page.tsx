@@ -1,0 +1,11 @@
+export default function AboutPage() {
+	return (
+		<main className="min-h-screen flex flex-col items-center justify-center p-8">
+			<h1 className="text-3xl font-bold mb-4">About</h1>
+			<p className="text-lg text-gray-600">
+				Welcome to the about page! Here you can find information about our organization and
+				its mission and activities.
+			</p>
+		</main>
+	);
+}
