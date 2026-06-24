@@ -7,6 +7,7 @@ import { useMemo, useState } from "react";
 type Member = {
 	id: number;
 	name: string;
+	link: string;
 	imageUrl: string;
 	carModel: string;
 };
@@ -15,6 +16,7 @@ const members: Member[] = [
 	{
 		id: 1,
 		name: "Elena Petrova",
+		link: "/members/elena-petrova",
 		carModel: "Porsche 911 Carrera",
 		imageUrl:
 			"https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1600&q=80",
@@ -22,6 +24,7 @@ const members: Member[] = [
 	{
 		id: 2,
 		name: "Luca Moretti",
+		link: "/members/luca-moretti",
 		carModel: "Alfa Romeo Giulia",
 		imageUrl:
 			"https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80",
@@ -29,6 +32,7 @@ const members: Member[] = [
 	{
 		id: 3,
 		name: "Marta Kowalska",
+		link: "/members/marta-kowalska",
 		carModel: "BMW M4",
 		imageUrl:
 			"https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1600&q=80",
@@ -36,6 +40,7 @@ const members: Member[] = [
 	{
 		id: 4,
 		name: "Jonas Richter",
+		link: "/members/jonas-richter",
 		carModel: "BMW M4",
 		imageUrl:
 			"https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -206,8 +211,23 @@ export default function MemberCarousel() {
 				<p className="text-[0.68rem] uppercase tracking-[0.22em] text-white/80">
 					Member Spotlight
 				</p>
-				<h2 className="text-2xl font-bold leading-none text-white sm:text-3xl">
-					{activeMember.name}
+				<h2 className="text-2xl font-bold leading-none sm:text-3xl">
+					<a
+						href={activeMember.link}
+						className="inline-flex items-center gap-1 text-white transition hover:text-white/80 focus:outline-none focus-visible:underline"
+					>
+						<svg
+							aria-hidden="true"
+							viewBox="0 0 24 24"
+							className="h-5 w-5 fill-none stroke-current"
+							strokeWidth="2"
+						>
+							<rect x="3" y="3" width="18" height="18" rx="5" />
+							<circle cx="12" cy="12" r="4" />
+							<circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+						</svg>
+						{activeMember.name}
+					</a>
 				</h2>
 				<p className="mt-1 text-sm text-white/85 sm:text-base">{activeMember.carModel}</p>
 			</div>
