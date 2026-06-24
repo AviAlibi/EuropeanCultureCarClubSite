@@ -7,6 +7,7 @@ import { useMemo, useState } from "react";
 type Member = {
 	id: number;
 	name: string;
+	title?: string;
 	link: string;
 	imageUrl: string;
 	carModel: string;
@@ -16,6 +17,7 @@ const members: Member[] = [
 	{
 		id: 1,
 		name: "Elena Petrova",
+		title: "Founder",
 		link: "/members/elena-petrova",
 		carModel: "Porsche 911 Carrera",
 		imageUrl:
@@ -24,6 +26,7 @@ const members: Member[] = [
 	{
 		id: 2,
 		name: "Luca Moretti",
+		title: "Event Lead",
 		link: "/members/luca-moretti",
 		carModel: "Alfa Romeo Giulia",
 		imageUrl:
@@ -40,6 +43,7 @@ const members: Member[] = [
 	{
 		id: 4,
 		name: "Jonas Richter",
+		title: "Media",
 		link: "/members/jonas-richter",
 		carModel: "BMW M4",
 		imageUrl:
@@ -206,6 +210,12 @@ export default function MemberCarousel() {
 			>
 				<ChevronRight size={22} />
 			</button>
+
+			{activeMember.title ? (
+				<div className="absolute right-4 top-4 rounded-full border border-white/20 bg-black/35 px-3 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-white/90 backdrop-blur-sm sm:right-5 sm:top-5">
+					{activeMember.title}
+				</div>
+			) : null}
 
 			<div className="absolute bottom-4 left-4 transition-all duration-300 ease-out sm:bottom-5 sm:left-5">
 				<p className="text-[0.68rem] uppercase tracking-[0.22em] text-white/80">
