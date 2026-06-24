@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Orbitron, Rajdhani } from "next/font/google";
+import Navbar from "./Navbar";
 import "./globals.css";
 
-const geistSans = Geist({
-	variable: "--font-geist-sans",
+const rajdhani = Rajdhani({
+	weight: ["400", "500", "600", "700"],
 	subsets: ["latin"],
+	variable: "--font-rajdhani",
 });
 
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
+const orbitron = Orbitron({
+	weight: ["500", "700"],
 	subsets: ["latin"],
+	variable: "--font-orbitron",
 });
 
 export const metadata: Metadata = {
-	title: "Finance App",
-	description: "Basic Next.js template",
+	title: "European Culture",
 };
 
 export default function RootLayout({
@@ -24,7 +26,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+			<body className={`${rajdhani.variable} ${orbitron.variable}`}>
+				<Navbar />
+				{children}
+			</body>
 		</html>
 	);
 }
