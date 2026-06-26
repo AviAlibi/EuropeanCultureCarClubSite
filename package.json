@@ -18,7 +18,7 @@
 		"db:dev": "npm run db:migrate-dev && npm run db:generate && npm run db:seed",
 		"test": "vitest",
 		"coverage": "vitest run --coverage",
-		"wipe:win": "docker system prune -a --volumes -f"
+		"scrub": "docker system prune -a --volumes -f"
 	},
 	"dependencies": {
 		"@prisma/adapter-pg": "^7.6.0",
